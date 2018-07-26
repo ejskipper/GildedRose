@@ -1,7 +1,5 @@
 const classes = require('../gilded_rose.js');
 
-
-
 describe("Gilded Rose", function() {
 
   it("should build an item in a shop with unchanging name", function() {
@@ -112,3 +110,13 @@ describe("Backstage passes to a TAFKAL80ETC concert", function() {
 
 });
 
+describe("Conjured items", function() {
+
+  it("should decline in quality by two every day", function() {
+    const gildedRose = new classes.Shop([ new classes.Item("Conjured foo",10,10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(8);
+  });
+
+
+});
